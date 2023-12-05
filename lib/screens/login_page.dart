@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_testapp/firebase_options.dart';
+import 'package:flutter_testapp/screens/sign_in_screen.dart';
+//import 'package:google_sign_in/google_sign_in.dart';
 import './profile_page.dart';
 import './register_page.dart';
 import './../utils/fire_auth.dart';
@@ -170,6 +172,23 @@ class _LoginPageState extends State<LoginPage> {
                                         },
                                         child: const Text(
                                           'Register',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 24.0),
+                                    Expanded(
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const SignInScreen(),
+                                            ),
+                                          );
+                                        },
+                                        child: const Text(
+                                          'Google',
                                           style: TextStyle(color: Colors.white),
                                         ),
                                       ),
