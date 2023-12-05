@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_testapp/firebase_options.dart';
 import 'package:flutter_testapp/screens/sign_in_screen.dart';
+import 'package:flutter_testapp/screens/db_dashboard_screen.dart';
 //import 'package:google_sign_in/google_sign_in.dart';
 import './profile_page.dart';
 import './register_page.dart';
@@ -189,6 +190,22 @@ class _LoginPageState extends State<LoginPage> {
                                         },
                                         child: const Text(
                                           'Google',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const DbDashboardScreen(),
+                                            ),
+                                          );
+                                        },
+                                        child: const Text(
+                                          'Dashboard',
                                           style: TextStyle(color: Colors.white),
                                         ),
                                       ),
